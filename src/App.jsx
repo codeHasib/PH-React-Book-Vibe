@@ -2,7 +2,8 @@ import { Outlet } from "react-router";
 import NavBar from "./Components/NavBar";
 import { BookContext } from "./Context/BookContext";
 import axios from "axios";
-import { use } from "react";
+import { use, useState } from "react";
+import { ToastContainer } from "react-toastify";
 
 const bookData = axios.get("/src/assets/public/booksData.json");
 
@@ -10,12 +11,19 @@ function App() {
   const booksRes = use(bookData);
   const books = booksRes.data;
 
+  const [readList, setReadList] = useState([]);
+  const [wishList, setWishList] = useState([]);
+
   return (
     <>
-      <BookContext.Provider value={{ books }}>
+      <BookContext.Provider
+        value={{ books, readList, setReadList, wishList, setWishList }}
+      >
         <NavBar></NavBar>
         <Outlet></Outlet>
       </BookContext.Provider>
+
+      <ToastContainer></ToastContainer>
     </>
   );
 }
