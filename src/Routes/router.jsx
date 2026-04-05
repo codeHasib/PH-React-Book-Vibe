@@ -4,11 +4,14 @@ import App from "../App";
 import HomePage from "../Components/HomePage";
 import ListedBooks from "../Components/ListedBooks";
 import PagesToRead from "../Components/PagesToRead";
+import BooksDetails from "../Components/BooksDetails";
+import ErrorPage from "../Components/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         index: true,
@@ -21,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "pagesToRead",
         element: <PagesToRead></PagesToRead>,
+      },
+      {
+        path: "books/:id",
+        element: <BooksDetails></BooksDetails>,
       },
     ],
   },
