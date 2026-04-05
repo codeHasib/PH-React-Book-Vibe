@@ -6,15 +6,30 @@ const NavBar = () => {
     <>
       <li>
         {" "}
-        <NavLink to={"/"}>Home</NavLink>{" "}
+        <NavLink
+          className={({ isActive }) => (isActive ? "btn btn-success" : "")}
+          to={"/"}
+        >
+          Home
+        </NavLink>{" "}
       </li>
       <li>
         {" "}
-        <NavLink to={"/listedBooks"}>Listed Books</NavLink>{" "}
+        <NavLink
+          className={({ isActive }) => (isActive ? "btn btn-success" : "")}
+          to={"/listedBooks"}
+        >
+          Listed Books
+        </NavLink>{" "}
       </li>
       <li>
         {" "}
-        <NavLink to={"/pagesToRead"}>Pages to Read</NavLink>{" "}
+        <NavLink
+          className={({ isActive }) => (isActive ? "btn btn-success" : "")}
+          to={"/pagesToRead"}
+        >
+          Pages to Read
+        </NavLink>{" "}
       </li>
     </>
   );
@@ -54,8 +69,14 @@ const NavBar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <button className="btn btn-accent text-white font-semibold"> Sign-in </button>
-          <button className="ml-4 btn btn-success text-white font-semibold"> Sign-up </button>
+          <button className="btn btn-accent text-white font-semibold">
+            {" "}
+            Sign-in{" "}
+          </button>
+          <button className="ml-4 btn btn-success text-white font-semibold">
+            {" "}
+            Sign-up{" "}
+          </button>
         </div>
       </div>
     </nav>
