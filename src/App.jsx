@@ -7,9 +7,14 @@ import { ToastContainer } from "react-toastify";
 
 const bookData = axios.get("/src/assets/public/booksData.json");
 
+const readBook = axios.get("/src/assets/public/readPagesData.json");
+
 function App() {
   const booksRes = use(bookData);
   const books = booksRes.data;
+
+  const readBookRes = use(readBook);
+  const pagesRead = readBookRes.data;
 
   const [readList, setReadList] = useState([]);
   const [wishList, setWishList] = useState([]);
@@ -17,7 +22,14 @@ function App() {
   return (
     <>
       <BookContext.Provider
-        value={{ books, readList, setReadList, wishList, setWishList }}
+        value={{
+          books,
+          readList,
+          setReadList,
+          wishList,
+          setWishList,
+          pagesRead,
+        }}
       >
         <NavBar></NavBar>
         <Outlet></Outlet>

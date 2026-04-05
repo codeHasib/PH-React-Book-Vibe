@@ -1,0 +1,27 @@
+[
+  {
+    "bookName": "The Great Gatsby",
+    "totalPages": 192,
+    "pagesRead": 150
+  },
+  {
+    "bookName": "1984",
+    "totalPages": 328,
+    "pagesRead": 200
+  },
+  {
+    "bookName": "The Hobbit",
+    "totalPages": 310,
+    "pagesRead": 310
+  },
+  {
+    "bookName": "The Alchemist",
+    "totalPages": 177,
+    "pagesRead": 45
+  },
+  {
+    "bookName": "The Girl on the Train",
+    "totalPages": 316,
+    "pagesRead": 120
+  }
+]

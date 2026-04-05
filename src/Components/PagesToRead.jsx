@@ -1,7 +1,14 @@
 import React from "react";
+import PageRechart from "./PageRechart";
 
 const PagesToRead = () => {
-  return <div>Pages to read</div>;
+  return (
+    <>
+      <div className="container mx-auto my-10">
+        <PageRechart></PageRechart>
+      </div>
+    </>
+  );
 };
 
 export default PagesToRead;

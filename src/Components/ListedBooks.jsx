@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Outlet } from "react-router";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 const ListedBooks = () => {
+  const [sort, setSort] = useState("");
+
   return (
     <>
       <div className="container mx-auto">
@@ -13,17 +15,17 @@ const ListedBooks = () => {
         <div className="flex justify-center items-center">
           <div className="dropdown dropdown-center">
             <div tabIndex={0} role="button" className="btn m-1">
-              Click ⬇️
+              Sort by : {`(${sort})`}
             </div>
             <ul
               tabIndex="-1"
               className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
             >
               <li>
-                <a>Pages</a>
+                <a onClick={() => setSort("Pages")}>Pages</a>
               </li>
               <li>
-                <a>Rating</a>
+                <a onClick={() => setSort("Rating")}>Rating</a>
               </li>
             </ul>
           </div>
