@@ -3,7 +3,14 @@ import { BookContext } from "../Context/BookContext";
 import BookList from "./BookList";
 
 const WishList = () => {
-  const { wishList } = useContext(BookContext);
+  const { sort, wishList, setWishList } = useContext(BookContext);
+  if (sort === "Pages") {
+    const pageSort = wishList.sort((a, b) => a.totalPages - b.totalPages);
+    setWishList(pageSort);
+  } else if (sort === "Rating") {
+    const ratingSort = wishList.sort((a, b) => a.rating - b.rating);
+    setWishList(ratingSort);
+  }
   return (
     <>
       {wishList.length > 0 ? (

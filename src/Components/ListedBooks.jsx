@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Link, Outlet } from "react-router";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import { BookContext } from "../Context/BookContext";
 
 const ListedBooks = () => {
-  const [sort, setSort] = useState("");
+  const { sort, setSort } = useContext(BookContext);
 
   return (
     <>

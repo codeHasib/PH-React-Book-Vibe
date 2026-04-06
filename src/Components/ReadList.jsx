@@ -3,7 +3,14 @@ import { BookContext } from "../Context/BookContext";
 import BookList from "./BookList";
 
 const ReadList = () => {
-  const { readList } = useContext(BookContext);
+  const { readList, setReadList, sort } = useContext(BookContext);
+  if (sort === "Pages") {
+    const pageSort = readList.sort((a, b) => a.totalPages - b.totalPages);
+    setReadList(pageSort);
+  } else if (sort === "Rating") {
+    const ratingSort = readList.sort((a, b) => a.rating - b.rating);
+    setReadList(ratingSort);
+  }
   return (
     <>
       {readList.length > 0 ? (

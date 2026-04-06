@@ -18,6 +18,7 @@ function App() {
 
   const [readList, setReadList] = useState([]);
   const [wishList, setWishList] = useState([]);
+  const [sort, setSort] = useState("");
 
   return (
     <>
@@ -29,6 +30,8 @@ function App() {
           wishList,
           setWishList,
           pagesRead,
+          sort,
+          setSort
         }}
       >
         <NavBar></NavBar>
