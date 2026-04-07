@@ -1,4 +1,4 @@
-# 📚 Bookish | Personal Library Manager
+# 📚 Book-vibe | Personal Library Manager
 
 A modern, persistent web application designed for book lovers to organize their reading journey. Built with **React 19** and styled with **Tailwind CSS v4**, this app allows users to curate a personal bookshelf, track reading progress, and visualize data in real-time.
 
