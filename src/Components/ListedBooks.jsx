@@ -5,7 +5,7 @@ import "react-tabs/style/react-tabs.css";
 import { BookContext } from "../Context/BookContext";
 
 const ListedBooks = () => {
-  const { sort, setSort } = useContext(BookContext);
+  const { sort, setSort, setCurrentPage } = useContext(BookContext);
 
   return (
     <>
@@ -34,15 +34,17 @@ const ListedBooks = () => {
         <div>
           <Tabs>
             <TabList>
-              <Tab>
+              <Tab onClick={() => setCurrentPage("read-list")}>
                 {" "}
                 <Link to={""}> Read-List </Link>{" "}
               </Tab>
-              <Tab>
+              <Tab onClick={() => setCurrentPage("wish-list")}>
                 {" "}
                 <Link to={"wishList"}> Wish-List </Link>{" "}
               </Tab>
             </TabList>
+            <TabPanel></TabPanel>
+            <TabPanel></TabPanel>
           </Tabs>
         </div>
         <Outlet></Outlet>
