@@ -5,9 +5,8 @@ import axios from "axios";
 import { use, useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 
-const bookData = axios.get("/src/assets/public/booksData.json");
-
-const readBook = axios.get("/src/assets/public/readPagesData.json");
+const bookData = axios.get("/booksData.json");
+const readBook = axios.get("/readPagesData.json");
 
 function App() {
   const booksRes = use(bookData);
