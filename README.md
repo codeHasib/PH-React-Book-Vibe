@@ -1,16 +1,42 @@
-# React + Vite
+# 📚 Bookish | Personal Library Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, persistent web application designed for book lovers to organize their reading journey. Built with **React 19** and styled with **Tailwind CSS v4**, this app allows users to curate a personal bookshelf, track reading progress, and visualize data in real-time.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+* **Dual-List Management**: Seamlessly manage a **Reading List** and a **Wishlist** with intuitive UI toggles.
+* **Data Persistence**: Integrated **localStorage** logic to ensure your lists are saved across browser sessions.
+* **Visual Analytics**: Dynamic **Recharts** integration to visualize page counts and reading progress.
+* **Interactive Feedback**: Real-time notifications powered by **React-Toastify** for every action (Add, Remove, Sort).
+* **Modern UI**: Clean, responsive interface built with **daisyUI v5** and **Tailwind CSS v4**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Framework**: React 19
+* **Styling**: Tailwind CSS v4 & daisyUI v5
+* **Charts**: Recharts (Responsive Bar & Pie Charts)
+* **Notifications**: React-Toastify
+* **Persistence**: Browser LocalStorage API
+* **Deployment**: Vercel
+
+---
+
+## 📖 Key Logic Implementations
+
+### State & Storage Synchronization
+The app uses a "Lazy Initializer" and `useEffect` to keep the UI in sync with the browser's storage:
+```javascript
+// Initializing state from storage
+const [readingList, setReadingList] = useState(() => {
+  const saved = localStorage.getItem('reading-list');
+  return saved ? JSON.parse(saved) : [];
+});
+
+// Automatic synchronization
+useEffect(() => {
+  localStorage.setItem('reading-list', JSON.stringify(readingList));
+}, [readingList]);
