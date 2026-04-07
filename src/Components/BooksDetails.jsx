@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router";
 import { BookContext } from "../Context/BookContext";
 import { toast } from "react-toastify";
 
-const BooksDetails = ( ) => {
+const BooksDetails = () => {
   const { id } = useParams();
   const { books, readList, setReadList, wishList, setWishList } =
     useContext(BookContext);
